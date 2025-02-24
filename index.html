@@ -9,9 +9,13 @@
       rel="stylesheet"
     />
     <style>
+      /* Light Mode Styles */
       body {
         background-color: #f8f9fa;
+        color: #000;
+        transition: all 0.3s ease;
       }
+
       .form-container {
         max-width: 500px;
         margin: auto;
@@ -20,18 +24,51 @@
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       }
+
       .form-label {
         font-weight: bold;
       }
+
       .btn-primary {
         width: 100%;
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+      }
+
+      .form-container.dark-mode {
+        background-color: #34495e;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-dark-mode {
+        background-color: #1abc9c;
+        color: #fff;
+      }
+
+      .form-label,
+      .btn-dark-mode {
+        color: #ecf0f1;
+      }
+
+      .btn-dark-mode:hover {
+        background-color: #16a085;
       }
     </style>
   </head>
   <body>
     <div class="container mt-5">
       <div class="form-container">
-        <h2 class="text-center mb-4">Student I'd Card Form</h2>
+        <h2 class="text-center mb-4">Student ID Card Form</h2>
+
+        <!-- Dark Mode Toggle Button -->
+        <button id="toggleDarkMode" class="btn btn-dark-mode mb-4">
+          Switch to Dark Mode
+        </button>
+
         <form id="idCardForm" onsubmit="run(),event.preventDefault()">
           <div class="mb-3">
             <label for="studentId" class="form-label">Student ID</label>
